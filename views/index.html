@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>OS Metrics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+</head>
+<body>
+<div class="container">
+    <br>
+    <div class="row">
+    <div class="col-sm-6" style="text-align:center;">
+    <h4 style="text-align:center;" class="btn btn-primary" id="os-type"></h4>
+    </div>
+    <div class="col-sm-6" style="text-align:center;">
+     <h4 class="btn btn-primary" style="text-align:center;">
+    <span class="spinner-border spinner-border-sm" ></span>
+    Fetching System Metrics..
+    </h4>
+    </div>
+    </div>
+    
+    <hr>
+    <h4 style="text-align:center;">Main Memory Usage Metrics</h4>
+    <br>
+    <div class="row" style="backgroundColor:white;">
+    <div class="col-sm-3">
+    </div>
+    <canvas id="RAMChart" class="col-sm-6" style="padding:20px;width:100%;max-width:600px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></canvas>
+    <div class="col-sm-3"></div>
+    </div>
+    <hr>
+    <h4 style="text-align:center;">Network Details</h4>
+    <br>
+     <table style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <tr>
+            <td>IPv4 Address</td>
+            <td id="ipv4"></td>
+        </tr>
+        <tr>
+            <td>IPv4 netmask</td>
+            <td id="ipv4-netmask"></td>
+        </tr>
+        <tr>
+            <td>IPv4 CIDR</td>
+            <td id="ipv4-cidr"></td>
+        </tr>
+         <tr>
+            <td>IPv6 Address</td>
+            <td id="ipv6"></td>
+        </tr>
+        <tr>
+            <td>IPv6 netmask</td>
+            <td id="ipv6-netmask"></td>
+        </tr>
+        <tr>
+            <td>IPv6 CIDR</td>
+            <td id="ipv6-cidr"></td>
+        </tr>
+        </table>
+    <hr>
+    <h4 style="text-align:center;">CPU Usage Metrics</h4>
+    <br>
+    <div class="row" id="cpu" style="backgroundColor:white;"></div>
+    <hr>
+    <div class="row" id="networks" style="backgroundColor:white;"></div>
+</div>
+
+<script src="app.js">
+</script>
+
+</body>
+</html>
